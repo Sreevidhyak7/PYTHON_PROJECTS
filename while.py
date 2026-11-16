@@ -7,6 +7,9 @@ def fire(rounds):
     while rounds > 0:
         print("     🔥")
         rounds -=1
+    print("Reload to fire")
+        
+
 
 ammo = int(input("How many ammos do you have?"))
 fire(ammo)
