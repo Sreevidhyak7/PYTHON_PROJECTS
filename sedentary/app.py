@@ -12,6 +12,16 @@ App.resizable(False, False)
 frame = ttk.Frame(App, padding=10)
 frame.grid(row=0, column=0, padx=10, pady=10)
 
+sedentary_alert = IntVar()
+
+
+
+sed_check = ttk.Checkbutton(
+    frame, variable=sedentary_alert,
+    text="Sedentary Alert"
+)
+
+sed_check.grid(row=0, column=0, pady=10)
 
 
 App.mainloop()
