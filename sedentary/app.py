@@ -21,7 +21,10 @@ sedentary_alert.set(
 )
 
 def toggle_sed_alert():
-    print(sedentary_alert.get())
+    JSDATA["sedentry_alert"] = bool(
+        sedentary_alert.get()
+    )
+    update_json(JSDATA)
 
 sed_check = ttk.Checkbutton(
     frame, variable=sedentary_alert,
@@ -35,18 +38,19 @@ sed_lbl.grid(row=1, column=0, pady=5, )
 
 
 def interval_change(interval):
-    print(interval)
+    JSDATA["interval"] = int(interval.split()[0])
+    update_json(JSDATA)
 
 interval_opt = ["20 min", "15 min", "30 min", "45 min"]
 interval_period = StringVar()
-interval_period.set(f'{JSDATA["interval"]} min')
+
 
 interval_dropdown = ttk.OptionMenu(
     frame, interval_period, "Select",
     *interval_opt,  command=interval_change
 )
-interval_dropdown.grid(row=1, column=1, pady=5)
-
+interval_dropdown.grid(row=1, column=1, padx=(10, 0))
+interval_period.set(f'{JSDATA["interval"]} min')
 
 
 App.mainloop()

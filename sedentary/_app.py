@@ -15,3 +15,8 @@ def load_json():
     with open('schedule.json') as jsfile:
         return json.load(jsfile)
 
+def update_json(data: dict):
+    with open('schedule.json', "w") as jsfile:
+        json.dump(
+            data, jsfile, indent=2
+        )
