@@ -2,7 +2,9 @@ def fire(rounds):
     print("Loading ammo")
     print("...Firing...")
 
-    while rounds:
+    if rounds <= 0:
+        print("No ammo to fire")
+    while rounds > 0:
         print("     🔥")
         rounds -=1
 
