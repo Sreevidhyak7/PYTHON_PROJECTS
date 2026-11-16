@@ -1,6 +1,8 @@
 from tkinter import Tk, ttk, StringVar, IntVar
 from _app import *
 
+# load app data
+JSDATA = load_json()
 
 # root window
 App = Tk()
@@ -13,6 +15,10 @@ frame = ttk.Frame(App, padding=10)
 frame.grid(row=0, column=0, padx=10, pady=10)
 
 sedentary_alert = IntVar()
+sedentary_alert.set(
+    1 if JSDATA["sedentary_alert"]
+                   else 0
+)
 
 def toggle_sed_alert():
     print(sedentary_alert.get())
