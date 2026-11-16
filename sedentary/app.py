@@ -27,12 +27,16 @@ sed_check.grid(row=0, column=0, pady=5)
 sed_lbl = ttk.Label(frame, text="Interval")
 sed_lbl.grid(row=1, column=0, pady=5)
 
+
+def interval_change(interval):
+    print(interval)
+
 interval_opt = ["20 min", "15 min", "30 min", "45 min"]
 interval_period = StringVar()
 
 interval_dropdown = ttk.OptionMenu(
     frame, interval_period, "Select",
-    *interval_opt
+    *interval_opt,  command=interval_change
 )
 interval_dropdown.grid(row=1, column=1, pady=5)
 
