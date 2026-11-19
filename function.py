@@ -201,3 +201,14 @@ def log2(*val, decor = "-", pad=2):
     print(prefix)
 
 log2(1,2,3)
+
+def log3(**kwargs):
+    print(kwargs)             #convention is to name as kwargs
+
+log3(name="John", age=24)
+
+
+
+result = lambda num, exp=1:pow(num, exp)
+print(result(num=25, exp=0.5))
+
