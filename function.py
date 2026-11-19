@@ -178,3 +178,15 @@ people = [
 adult_select = lambda person : person['adult']
 for group in groupby(people, adult_select):
     print("ADULT" if group[0] else "MINOR")
+
+
+#MANUAL PRINT FUNCTION
+def log(val):
+    val = str(val)
+    prefix = "-"*len(val)
+
+    print(prefix)
+    print(val)
+    print(prefix)
+
+log(1000)
