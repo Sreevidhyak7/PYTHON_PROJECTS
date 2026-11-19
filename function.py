@@ -181,12 +181,23 @@ for group in groupby(people, adult_select):
 
 
 #MANUAL PRINT FUNCTION
-def log(val):
+def log1(val):
     val = str(val)
     prefix = "-"*len(val)
 
     print(prefix)
     print(val)
     print(prefix)
+ 
+log1(1000)
 
-log(1000)
+def log2(*val, decor = "-", pad=2):
+    val = str(val)
+    prefix = decor*pad+decor*len(val)+decor*pad
+
+    print(prefix)
+    print(decor*pad+
+        val+ decor*pad)
+    print(prefix)
+
+log2(1,2,3)
