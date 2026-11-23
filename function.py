@@ -212,3 +212,11 @@ log3(name="John", age=24)
 result = lambda num, exp=1:pow(num, exp)
 print(result(num=25, exp=0.5))
 
+#RECCURSIVE FUNCTION
+
+def reduce(num):
+    print(num)
+    if num:
+        reduce(num-1)
+
+reduce(3)
